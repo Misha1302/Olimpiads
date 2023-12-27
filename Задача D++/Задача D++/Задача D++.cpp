@@ -64,10 +64,8 @@ i16 CountLen(std::vector<std::vector<i16>> blocks) {
 	i16 len = 0;
 
 	for (size_t i = 0; i < blocks.size(); i++) {
-		bool a = blocks[i].size() < 2;
-		if (a) continue;
-		bool b = blocks[i][0] == blocks[i][1];
-		if (b) continue;
+		if (blocks[i].size() < 2 || blocks[i][0] == blocks[i][1]) 
+			continue;
 
 		len += blocks[i].size();
 	}
